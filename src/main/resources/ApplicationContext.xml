@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        id: bean的名称 唯一
+        class bean的全类名，通过反射的方式在IOC容器中创建bean 所以要求bean中必须有无参构造器
+    -->
+    <bean id="helloWorld" class="com.wondertek.self.spring.beans.HelloWorld">
+        <property name="name" value="spring"></property>
+    </bean>
+</beans>
