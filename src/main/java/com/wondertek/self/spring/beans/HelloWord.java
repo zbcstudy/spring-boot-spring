@@ -1,10 +1,9 @@
 package com.wondertek.self.spring.beans;
 
-public class HelloWorld {
-
+public class HelloWord {
     private String name;
 
-    public HelloWorld() {
+    public HelloWord() {
         System.out.println("helloWorld's constructor");
     }
 
@@ -16,7 +15,8 @@ public class HelloWorld {
         this.name = name;
     }
 
-    public void hello() {
+    public String hello() {
         System.out.println("hello: "+ name);
+        return name;
     }
 }
