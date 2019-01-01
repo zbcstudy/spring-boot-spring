@@ -11,7 +11,8 @@ import org.springframework.context.annotation.*;
 @Configuration
 @ComponentScans({
         @ComponentScan(
-                basePackages = {"com.wondertek.self.spring.beans","com.wondertek.self.spring.config"},
+                basePackages = {"com.wondertek.self.spring.beans","com.wondertek.self.spring.config",
+                        "com.wondertek.self.spring.condition"},
                 includeFilters = {@ComponentScan.Filter(type = FilterType.CUSTOM,classes = MyTypeFilter.class)},
                 useDefaultFilters = false
         )
@@ -19,4 +20,8 @@ import org.springframework.context.annotation.*;
 @Import({MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
 public class MainConfig {
 
+    @Bean
+    public ColorFactoryBean colorFactoryBean() {
+        return new ColorFactoryBean();
+    }
 }

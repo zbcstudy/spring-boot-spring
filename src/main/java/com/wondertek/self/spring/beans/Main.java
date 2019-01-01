@@ -44,12 +44,12 @@ public class Main {
         helloWord.hello();
     }
 
+    AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
     /**
      * 注解配置测试
      */
     @Test
     public void annotationConfigTest() {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
         ConfigurableEnvironment environment = applicationContext.getEnvironment();
         String[] defaultProfiles = environment.getDefaultProfiles();
         for (String profile : defaultProfiles) {
@@ -60,4 +60,18 @@ public class Main {
             System.out.println(name);
         }
     }
+
+    /**
+     * 测试factoryBean方式注册bean
+     */
+    @Test
+    public void factoryBeanTest() {
+        Object bean = applicationContext.getBean("colorFactoryBean");
+        System.out.println(bean.getClass());
+
+        Object bean1 = applicationContext.getBean("&colorFactoryBean");
+        System.out.println(bean.getClass());
+
+    }
+
 }
