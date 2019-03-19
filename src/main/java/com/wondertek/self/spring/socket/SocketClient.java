@@ -6,6 +6,7 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 
 /**
+ * 基于java的socket原始编程：客户端
  * @Author zbc
  * @Date 21:40-2019/1/5
  */
